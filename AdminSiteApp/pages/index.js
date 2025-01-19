@@ -6,6 +6,13 @@ export default function Home() {
 
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const router = useRouter();
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            router.push("/products");
+        }
+    }, [isLoggedIn, router]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -30,10 +37,6 @@ export default function Home() {
             setError("Coś poszło nie tak. Spróbuj ponownie.");
         }
     };
-
-    if (isLoggedIn) {
-        router.push("/products");
-    }
 
     // Formularz logowania (pokazywany tylko jeśli użytkownik nie jest zalogowany)
     return (
