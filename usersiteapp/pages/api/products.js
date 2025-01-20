@@ -33,7 +33,6 @@ export default async function handle(req, res) {
 
     try {
         if (method === "GET") {
-            console.log("xD");
             const product = query?.id
                 ? await Product.findById(query.id)
                 : await Product.find();
