@@ -9,13 +9,12 @@ import Cookies from "js-cookie";
 const ProductPageWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: strech;
+    align-items: flex-start;
     padding: 20px;
     min-height: 100vh;
     background-color: #f5f5f5;
     flex-direction: row;
     margin-top: 5vh;
-    max-height: 100vh;
 `;
 
 const ProductDetailsWrapper = styled.div`
@@ -216,6 +215,7 @@ const ProductReviewWrapper = styled.div`
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 49.5%;
     max-width: 1200px;
+    max-height: 120vh;
 `;
 
 const ReviewPageWrapper = styled.div`
@@ -248,10 +248,46 @@ export default function ProductPage() {
                     setLoading(false);
                 }
             };
+            const fetchReviews = async () => {
+                try {
+                    const response = await axios.get(`/api/reviews?id=${id}`); // Fetch product by ID
+                    setReviews(response.data);
+                    setLoading(false);
+                } catch (error) {
+                    console.error("Error fetching product:", error);
+                    setLoading(false);
+                }
+            };
 
             fetchProduct();
+            fetchReviews();
         }
     }, [id]); // Effect triggered when id in URL changes
+
+    const handleSubmit = async () => {
+        //Handle new review submit
+        if (rating < 1 || rating > 5 || !newReview.trim()) {
+            alert("Proszę podać ocenę (1-5) oraz treść opinii.");
+            return;
+        }
+
+        try {
+            // Use endpoint to post review for a certain product
+            const response = await axios.post(`/api/reviews`, {
+                productId: id,
+                content: newReview,
+                rating: rating,
+            });
+
+            setReviews([response.data, ...reviews]); // Locally add new review
+            setNewReview(""); // Reset input field
+            setRating(0); // Reset input field
+            alert("Twoja opinia została dodana!");
+        } catch (error) {
+            console.error("Błąd podczas dodawania opinii:", error);
+            alert("Coś poszło nie tak. Spróbuj ponownie później.");
+        }
+    };
 
     const addToCart = () => {
         // Get existing cart from cookies (if any)
@@ -377,7 +413,9 @@ export default function ProductPage() {
                                     placeholder="Napisz swoją opinię"
                                 />
                             </ReviewInputWrapper>
-                            <SubmitButton>Dodaj opinię</SubmitButton>
+                            <SubmitButton onClick={handleSubmit}>
+                                Dodaj opinię
+                            </SubmitButton>
                         </ReviewCreateWrapper>
                     </ReviewFormWrapper>
                 </ProductReviewWrapper>

@@ -18,10 +18,6 @@ const ProductSchema = new mongoose.Schema({
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
     properties: { type: Object },
     amount: { type: Number, required: true, default: 0 },
-    reviews: {
-        content: { type: String, required: false, default: [] },
-        rating: { type: Number, required: false, default: 0 },
-    },
 });
 
 const Product =
