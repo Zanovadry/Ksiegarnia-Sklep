@@ -1,7 +1,13 @@
-Ten projekt to prosta księgarnia internetowa. Aplikacja umożliwia przeglądanie produktów, wystawianie opinii, dodawanie produktów do koszyka, finalizowanie zamówień, rejestrację oraz logowanie.
+Ten projekt to prosta księgarnia internetowa. Aplikacja umożliwia przeglądanie produktów, 
+wystawianie opinii, dodawanie produktów do koszyka, finalizowanie zamówień, rejestrację oraz logowanie.
+
 Autorzy: Jakub Kowalewski, Marcel Pokrywka, Emilia Tokarz
+
 #Funkcjonalności:
-Projekt został podzielony na dwie sekcje jako że mamy dwa poziomy uprawnień użytkowników: administratora oraz zwykłego usera
+
+Projekt został podzielony na dwie sekcje 
+jako że mamy dwa poziomy uprawnień użytkowników: administratora oraz zwykłego usera
+
 FUNKCJONALNOŚCI ADMINSITE:
 - pulpit z dwoma wykresami które pokazują liczbę zamówień dla konkretnego dnia oraz dzienną sprzedaż (PLN)
 - przejrzenie listy wszystkich produktów
@@ -15,7 +21,9 @@ FUNKCJONALNOŚCI ADMINSITE:
 - edycja wybranego zamówienia
 - usunięcie zamówienia
 - możliwość zaktualizowania głównego produktu na stronie głównej
-FUNKCJONALNOŚCI USERSITE:
+
+- FUNKCJONALNOŚCI USERSITE:
+
 - możliwość zarejestrowania się
 - pamiętanie danych logowania
 - zalogowanie się
@@ -29,6 +37,7 @@ FUNKCJONALNOŚCI USERSITE:
 - możliwość edycji koszyka
 - przeliczanie wartości zamówienia
 - złożenie zamówienia
+  
 Wszystkie operacje zostają zapisane w bazie danych na MongoDB
 ## Technologie
 -   React
@@ -36,5 +45,7 @@ Wszystkie operacje zostają zapisane w bazie danych na MongoDB
 -   Yarn
 -   Node JS
 -   MongoDB
-Pracą podzieliliśmy się mniej więcej po równo, często pracując razem w tym samym momencie przez co nie ma potrzeby przypisywać autorstwa
+  
+Pracą podzieliliśmy się mniej więcej po równo, często pracując razem w tym
+ samym momencie przez co nie ma potrzeby przypisywać autorstwa
 poszczególnego segmentu tylko jednej osobie, była to nasza wspólna praca :)
