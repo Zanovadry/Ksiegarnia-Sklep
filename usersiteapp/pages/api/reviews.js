@@ -29,7 +29,6 @@ export default async function handle(req, res) {
             }
 
             const reviews = await Review.find({ productId: query.id }).lean();
-            console.log(reviews);
             return res.status(200).json(reviews);
         }
 
