@@ -3,7 +3,7 @@ wystawianie opinii, dodawanie produktów do koszyka, finalizowanie zamówień, r
 
 Autorzy: Jakub Kowalewski, Marcel Pokrywka, Emilia Tokarz
 
-#Funkcjonalności:
+# Funkcjonalności:
 
 Projekt został podzielony na dwie sekcje 
 jako że mamy dwa poziomy uprawnień użytkowników: administratora oraz zwykłego usera
@@ -42,10 +42,5 @@ Wszystkie operacje zostają zapisane w bazie danych na MongoDB
 ## Technologie
 -   React
 -   Tailwind CSS
--   Yarn
 -   Node JS
 -   MongoDB
-  
-Pracą podzieliliśmy się mniej więcej po równo, często pracując razem w tym
- samym momencie przez co nie ma potrzeby przypisywać autorstwa
-poszczególnego segmentu tylko jednej osobie, była to nasza wspólna praca :)
